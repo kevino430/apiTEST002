@@ -13,25 +13,30 @@ curl_setopt_array($curl, array(
   CURLOPT_FOLLOWLOCATION => true,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'GET',
-  // CURLOPT_POSTFIELDS 應該在 POST 請求中使用，在 GET 請求中這行是不必要的。
-  // CURLOPT_POSTFIELDS =>'{}',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: text/plain'
   ),
 ));
 
 $response = curl_exec($curl);
-$status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE); // 獲取 HTTP 狀態碼
+$status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE); // 获取 HTTP 状态码
+
+if (curl_errno($curl)) {
+    // 如果请求出错，显示错误信息
+    print_r("cURL Error: " . htmlspecialchars(curl_error($curl)));
+} else {
+    // 显示响应状态码
+    echo "HTTP Status Code: " . $status_code . "\n";
+    if ($status_code == 403) {
+        print_r("Access to the API is forbidden. This could be due to missing/invalid credentials, IP blocking, server configuration, or triggered security rules.\n");
+    }
+}
 
 curl_close($curl);
 
 echo "<pre>";
-echo "HTTP Status Code: " . $status_code . "\n"; // 輸出 HTTP 狀態碼
-echo "</pre>";
-
-echo "<pre>";
 echo "Response: \n";
-echo htmlspecialchars($response); // 確保 HTML 格式的回應被適當顯示
+echo htmlspecialchars($response); // 使用 htmlspecialchars 来避免 HTML 被渲染
 echo "</pre>";
 
 echo "<pre>";
