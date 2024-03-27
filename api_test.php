@@ -28,7 +28,7 @@ if (curl_errno($curl)) {
     // 显示响应状态码
     echo "HTTP Status Code: " . $status_code . "\n";
     if ($status_code == 403) {
-        print_r("Access to the API is forbidden. This could be due to missing/invalid credentials, IP blocking, server configuration, or triggered security rules.\n");
+        print_r("就是403 啥都沒回..... 這是我自記寫的 是因為 curl_errno 沒東西才寫。 (無法訪問 API。這可能是由於缺少或無效的憑證、IP地址被封鎖、伺服器配置錯誤，或觸發了安全規則。)\n");
     }
 }
 
