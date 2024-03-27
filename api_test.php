@@ -1,6 +1,8 @@
 <?php
-echo 123456;
-exit;
+echo "<pre>";
+print_r("this is api_test.php start");
+echo "</pre>";
+
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -24,3 +26,8 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 echo $response;
+
+
+echo "<pre>";
+print_r("this is api_test.php end");
+echo "</pre>";
