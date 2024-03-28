@@ -29,6 +29,13 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE); // 获取 HTTP 状态码
 
+// 获取请求头部
+$requestHeaders = curl_getinfo($curl, CURLINFO_HEADER_OUT);
+echo "<pre>Request Headers: \n";
+echo htmlspecialchars($requestHeaders);
+echo "</pre>";
+
+
 if (curl_errno($curl)) {
     // 如果请求出错，显示错误信息
     print_r("cURL Error: " . htmlspecialchars(curl_error($curl)));
