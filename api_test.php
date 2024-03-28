@@ -2,8 +2,14 @@
 echo "<pre>";
 print_r("this is api_test.php start\n");
 echo "</pre>";
-// CURLOPT_URL => 'https://tosakalinky.elidot-cloud.com/jsonapi/get_time',
+
 $curl = curl_init();
+
+// 设置 User-Agent
+$userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3';
+curl_setopt($curl, CURLOPT_USERAGENT, $userAgent);
+
+// CURLOPT_URL => 'https://tosakalinky.elidot-cloud.com/jsonapi/get_time',
 curl_setopt_array($curl, array(
   
   CURLOPT_URL => 'https://ezweb360.xyz',
