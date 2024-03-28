@@ -32,7 +32,7 @@ $status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE); // 获取 HTTP 状态码
 // 获取请求头部
 $requestHeaders = curl_getinfo($curl, CURLINFO_HEADER_OUT);
 echo "<pre>Request Headers: \n";
-echo htmlspecialchars($requestHeaders);
+echo print_r($requestHeaders);
 echo "</pre>";
 
 
