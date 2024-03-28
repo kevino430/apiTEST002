@@ -16,7 +16,7 @@ curl_setopt($curl, CURLINFO_HEADER_OUT, true);
 
 curl_setopt_array($curl, array(
   
-  CURLOPT_URL => 'https://ezweb360.xyz',
+  CURLOPT_URL => 'https://tosakalinky.elidot-cloud.com/jsonapi/get_time',
   
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
