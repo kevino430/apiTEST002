@@ -10,6 +10,10 @@ $curl = curl_init();
 // curl_setopt($curl, CURLOPT_USERAGENT, $userAgent);
 
 // CURLOPT_URL => 'https://tosakalinky.elidot-cloud.com/jsonapi/get_time',
+
+// 确保启用了 HEADER_OUT 选项
+curl_setopt($curl, CURLINFO_HEADER_OUT, true);
+
 curl_setopt_array($curl, array(
   
   CURLOPT_URL => 'https://ezweb360.xyz',
