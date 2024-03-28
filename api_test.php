@@ -2,10 +2,12 @@
 echo "<pre>";
 print_r("this is api_test.php start\n");
 echo "</pre>";
-
+// CURLOPT_URL => 'https://tosakalinky.elidot-cloud.com/jsonapi/get_time',
 $curl = curl_init();
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://tosakalinky.elidot-cloud.com/jsonapi/get_time',
+  
+  CURLOPT_URL => 'https://ezweb360.xyz',
+  
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
