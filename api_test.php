@@ -117,3 +117,4 @@ if (curl_errno($curl)) {
 
 curl_close($curl);
 // git test 001 test cloud run IP 
+// git test 002 test cloud run IP 
